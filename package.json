@@ -1,0 +1,11 @@
+{
+  "name": "publish_cocos2dx_code",
+  "displayName": "Publish Code - Cocos2dx C++",
+  "description": "",
+  "version": "1.0",
+  "author": {
+    "name": "chaochaodev"
+  },
+  "icon": "",
+  "main": "main.js"
+}
