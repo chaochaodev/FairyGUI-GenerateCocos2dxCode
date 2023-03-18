@@ -49,7 +49,7 @@ function genCode(handler) {
         let memberCnt = members.Count;
         for (let j = 0; j < memberCnt; j++) {
             let memberInfo = members.get_Item(j);
-            writer.writeln('%s* %s = nullptr;', memberInfo.type, memberInfo.varName);
+            writer.writeln('%s* %s = nullptr;', 'fairygui::' + memberInfo.type, memberInfo.varName);
         }
         writer.decIndent();
         writer.writeln();
