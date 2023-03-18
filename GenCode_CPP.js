@@ -9,7 +9,7 @@ function genCode(handler) {
     let namespaceName = codePkgName;
     let binderName = codePkgName + 'Binder';
     if (settings.packageName)
-        namespaceName = settings.packageName + '.' + namespaceName;
+        namespaceName = settings.packageName + '_' + namespaceName;
     //CollectClasses(stripeMemeber, stripeClass, fguiNamespace)
     let classes = handler.CollectClasses(settings.ignoreNoname, settings.ignoreNoname, null);
     handler.SetupCodeFolder(exportCodePath, "cpp,h"); //check if target folder exists, and delete old files
