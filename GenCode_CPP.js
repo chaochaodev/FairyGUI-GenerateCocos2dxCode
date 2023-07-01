@@ -52,7 +52,13 @@ function genCode(handler) {
             if (memberInfo.type == 'Controller') {
                 memberInfo.type = 'GController';
             }
-            writer.writeln('%s* %s = nullptr;', 'fairygui::' + memberInfo.type, memberInfo.varName);
+            var fullMemberInfoType;
+            if (memberInfo.type.indexOf("UI_") == 0) {
+                fullMemberInfoType = memberInfo.type;
+            } else {
+                fullMemberInfoType = 'fairygui::' + memberInfo.type;
+            }
+            writer.writeln('%s* %s = nullptr;', fullMemberInfoType, memberInfo.varName);
         }
         writer.decIndent();
         writer.writeln();
