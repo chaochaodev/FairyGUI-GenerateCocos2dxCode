@@ -49,6 +49,9 @@ function genCode(handler) {
         let memberCnt = members.Count;
         for (let j = 0; j < memberCnt; j++) {
             let memberInfo = members.get_Item(j);
+            if (memberInfo.type == 'Controller') {
+                memberInfo.type = 'GController';
+            }
             writer.writeln('%s* %s = nullptr;', 'fairygui::' + memberInfo.type, memberInfo.varName);
         }
         writer.decIndent();
