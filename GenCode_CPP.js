@@ -35,8 +35,7 @@ function genCode(handler) {
                 writer.writeln('class %s;', ref);
             }
         }
-        
-        if (classInfo.superClassName == 'GComponent') {
+        if (classInfo.superClassName.indexOf("G") == 0) {
             classInfo.superClassName = 'fairygui::' + classInfo.superClassName;
         }
         writer.writeln('class %s : public %s', classInfo.className, classInfo.superClassName);
